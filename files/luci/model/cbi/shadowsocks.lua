@@ -124,6 +124,10 @@ s.anonymous = true
 -- Part of WAN
 s:tab("wan_ac", translate("Interfaces - WAN"))
 
+o = s:taboption("wan_ac", Flag, "gfwlist_enable", translate("GFWList"))
+o.default = 0
+o.rmempty = false
+
 o = s:taboption("wan_ac", Value, "wan_bp_list", translate("Bypassed IP List"))
 o:value("/dev/null", translate("NULL - As Global Proxy"))
 if chnroute then o:value(chnroute, translate("ChinaDNS CHNRoute")) end
