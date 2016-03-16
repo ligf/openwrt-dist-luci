@@ -124,7 +124,7 @@ s.anonymous = true
 -- Part of WAN
 s:tab("wan_ac", translate("Interfaces - WAN"))
 
-o = s:taboption("wan_ac", Flag, "gfwlist_enable", translate("GFWList"))
+o = s:taboption("wan_ac", Flag, "chnroute_enable", translate("CHNRoute"), translate("If not checked, use the GFWList mode."))
 o.default = 0
 o.rmempty = false
 
@@ -133,12 +133,15 @@ o:value("/dev/null", translate("NULL - As Global Proxy"))
 if chnroute then o:value(chnroute, translate("ChinaDNS CHNRoute")) end
 o.default = "/dev/null"
 o.rmempty = false
+o:depends("chnroute_enable", "1")
 
 o = s:taboption("wan_ac", DynamicList, "wan_bp_ips", translate("Bypassed IP"))
 o.datatype = "ip4addr"
+o:depends("chnroute_enable", "1")
 
 o = s:taboption("wan_ac", DynamicList, "wan_fw_ips", translate("Forwarded IP"))
 o.datatype = "ip4addr"
+o:depends("chnroute_enable", "1")
 
 -- Part of LAN
 s:tab("lan_ac", translate("Interfaces - LAN"))
