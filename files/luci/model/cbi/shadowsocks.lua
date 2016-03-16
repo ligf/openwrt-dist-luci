@@ -132,15 +132,17 @@ o = s:taboption("wan_ac", Value, "wan_bp_list", translate("Bypassed IP List"))
 o:value("/dev/null", translate("NULL - As Global Proxy"))
 if chnroute then o:value(chnroute, translate("ChinaDNS CHNRoute")) end
 o.default = "/dev/null"
-o.rmempty = false
+o.rmempty = true
 o:depends("chnroute_enable", "1")
 
 o = s:taboption("wan_ac", DynamicList, "wan_bp_ips", translate("Bypassed IP"))
 o.datatype = "ip4addr"
+o.rmempty = true
 o:depends("chnroute_enable", "1")
 
 o = s:taboption("wan_ac", DynamicList, "wan_fw_ips", translate("Forwarded IP"))
 o.datatype = "ip4addr"
+o.rmempty = true
 o:depends("chnroute_enable", "1")
 
 -- Part of LAN
