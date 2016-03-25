@@ -129,27 +129,22 @@ o:value("gfw", translate("GFWList"))
 o:value("chn", translate("CHNRoute"))
 o.rmempty = false
 
-o = s:taboption("wan_ac", DynamicList, "wan_db_dos", translate("Domain Blacklist"))
+o = s:taboption("wan_ac", DynamicList, "wan_db_dos", translate("Forwarded Domain"))
 o.datatype = "hostname"
-o.rmempty = true
 o:depends("wan_work_mode", "gfw")
 
 o = s:taboption("wan_ac", Value, "wan_bp_list", translate("Bypassed IP List"))
 o:value("/dev/null", translate("NULL - As Global Proxy"))
 if chnroute then o:value(chnroute, translate("ChinaDNS CHNRoute")) end
 o.default = "/dev/null"
-o.rmempty = true
 o:depends("wan_work_mode", "chn")
 
 o = s:taboption("wan_ac", DynamicList, "wan_bp_ips", translate("Bypassed IP"))
 o.datatype = "ip4addr"
-o.rmempty = true
 o:depends("wan_work_mode", "chn")
 
 o = s:taboption("wan_ac", DynamicList, "wan_fw_ips", translate("Forwarded IP"))
 o.datatype = "ip4addr"
-o.rmempty = true
-o:depends("wan_work_mode", "chn")
 
 -- Part of LAN
 s:tab("lan_ac", translate("Interfaces - LAN"))
