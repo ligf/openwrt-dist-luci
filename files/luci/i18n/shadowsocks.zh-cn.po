@@ -73,6 +73,9 @@ msgstr "访问控制"
 msgid "Interfaces - WAN"
 msgstr "接口 - WAN"
 
+msgid "Work Mode"
+msgstr "工作模式"
+
 msgid "Bypassed IP List"
 msgstr "被忽略IP列表"
 
@@ -84,6 +87,9 @@ msgstr "ChinaDNS路由表"
 
 msgid "Bypassed IP"
 msgstr "额外被忽略IP"
+
+msgid "Forwarded Domain"
+msgstr "强制走代理域名"
 
 msgid "Forwarded IP"
 msgstr "强制走代理IP"
