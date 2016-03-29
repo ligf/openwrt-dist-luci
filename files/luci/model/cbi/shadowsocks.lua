@@ -108,6 +108,9 @@ o = s:option(Flag, "tunnel_enable", translate("Enable"))
 o.default = 0
 o.rmempty = false
 
+o = s:option(ListValue, "udp_forward_server", translate("UDP Forward Server"))
+for k, v in pairs(server_table) do o:value(k, v) end
+
 o = s:option(Value, "tunnel_port", translate("UDP Local Port"))
 o.datatype = "port"
 o.default = 5300
