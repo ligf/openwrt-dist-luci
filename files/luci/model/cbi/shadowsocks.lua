@@ -113,7 +113,7 @@ for k, v in pairs(server_table) do o:value(k, v) end
 
 o = s:option(Value, "tunnel_port", translate("UDP Local Port"))
 o.datatype = "port"
-o.default = 5300
+o.default = 5353
 o.rmempty = false
 
 o = s:option(Value, "tunnel_forward", translate("Forwarding Tunnel"))
